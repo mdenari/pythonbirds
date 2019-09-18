@@ -17,4 +17,10 @@ if __name__ == '__main__':
     for filho in luciano.filhos:
         print(filho.nome)
 
+    luciano.sobrenome = "Denari" # criando atributo dinamico
+    del luciano.filhos #remove o atributos dinamicamente - usar atributos dinamicos qdo uma data para uso um formato diferente só apresentação web.
+    print(luciano.__dict__)  #atributos de instancia fica aqui
+    print(mauricio.__dict__)
+
+
 
