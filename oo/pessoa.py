@@ -15,6 +15,17 @@ class Pessoa:
 
     def cumprimentar(self):    #Método
         return f'Olá {id(self)}'
+
+    @staticmethod   ##decorator #Metodos de Classe
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    #qdo quer acessar dados da propria classe
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
+
 if __name__ == '__main__':
     mauricio = Pessoa(nome='Mauricio')
     luciano = Pessoa(mauricio,nome='Luciano')
@@ -36,7 +47,11 @@ if __name__ == '__main__':
     print(Pessoa.olhos)
     print(mauricio.olhos)
     print(luciano.olhos)
-    print(id(Pessoa.olhos), id(mauricio.olhos), id(luciano.olhos)) ##o valor eh o mesmo pois o atributo foi criado fora dander  __init__
+    ##o valor eh o mesmo pois o atributo foi criado fora dander  __init__
+    print(id(Pessoa.olhos), id(mauricio.olhos), id(luciano.olhos))
+    print(Pessoa.metodo_estatico(),luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(),luciano.nome_e_atributos_de_classe())
+
 
 
 
